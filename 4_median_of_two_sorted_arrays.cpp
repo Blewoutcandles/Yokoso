@@ -44,12 +44,13 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
 #if BINARY_SEARCH
 double findMedianSortedArrays(vector<int>& a, vector<int>& b) {
     int m = a.size(), n = b.size();
+
+    if(m > n) {
+        return findMedianSortedArrays(b, a);
+    }
+
     bool odd = (m+n)%2 != 0;
     const int left_half = (m + n + 1)/2; //ignore the right half
-    if(m > n) {
-        swap(a, b);
-        swap(m, n);
-    }
     double median_sum = 0.0;
     int low = 0, high = m;
 
