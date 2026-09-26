@@ -1,5 +1,5 @@
 BUILD_OUTPUT := build
-BINARY_OUTPUT := ${BUILD_OUTPUT}/a
+BINARY_OUTPUT := ${BUILD_OUTPUT}/${FILE}.exe
 FLAGS := -Wall -Werror -Wshadow
 OPTIMIZATION_FLAG := -O2
 
@@ -8,10 +8,7 @@ ${BINARY_OUTPUT}: ${FILE}
 	@g++ ${FLAGS} ${FILE} ${OPTIMIZATION_FLAG} -o ${BINARY_OUTPUT}
 
 run: ${BINARY_OUTPUT}
-	@echo "$$(./${BINARY_OUTPUT})"
+	@echo "----- OUTPUT -----\n$$(./${BINARY_OUTPUT})"
 
 clean: 
 	@rm -rf build
-
-
-
