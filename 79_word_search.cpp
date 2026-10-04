@@ -18,7 +18,7 @@ int rowsize, colsize;
 bool dfs(vector<vector<char>>& board, 
     int rowidx, 
     int colidx, 
-    string word, 
+    const string& word, 
     int wrdidx) {
     
     if(wrdidx == (int)word.size()) { return true; }
@@ -72,7 +72,7 @@ void solve_and_print(const vector<vector<vector<char>>> &result,
         cout << "\n\n"  << std::boolalpha << exist(i, word[index++])<< " is the answer" << "\n\n";
     }
 }
-
+//time complexity : O(M∗N∗3^K)
 int main() {
     vector<vector<vector<char>>> question = {
         {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}},
